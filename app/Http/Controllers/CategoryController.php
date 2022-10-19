@@ -28,7 +28,7 @@ class CategoryController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'cover_image' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'cover_image' => 'image|mimes:jpeg,png,jpg,webp|max:2048',
             'subtitle' => 'required',
         ]);
         if ($request->cover_image) {
@@ -78,7 +78,7 @@ class CategoryController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'cover_image' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'cover_image' => 'image|mimes:jpeg,png,jpg,webp|max:2048',
             'subtitle' => 'required',
 
         ]);

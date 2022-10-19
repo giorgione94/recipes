@@ -48,7 +48,7 @@ class RecipeController extends Controller
         $user = Auth::user();
         $request->validate([
             'title' => 'required',
-            'cover_image' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'cover_image' => 'image|mimes:jpeg,png,jpg,webp|max:2048',
             'body' => 'required',
             'category_id' => 'required'
         ]);
@@ -104,7 +104,7 @@ class RecipeController extends Controller
         $user = Auth::user();
         $request->validate([
             'title' => 'required|max:255',
-            'cover_image' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'cover_image' => 'image|mimes:jpeg,png,jpg,webp|max:2048',
             'body' => 'required',
             'category_id' => 'required',
         ]);
