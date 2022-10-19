@@ -37,5 +37,4 @@ Auth::routes();
 Route::get('/admin', [App\Http\Controllers\AdminController::class , 'index'])->name('dashboard');
 Route::get('/admin/profile', [App\Http\Controllers\AdminController::class , 'profile'])->name('editProfile');
 Route::post('/admin/profile', [App\Http\Controllers\AdminController::class , 'updateProfile'])->name('updateProfile');
-Route::resource('likes', App\Http\Controllers\LikeController::class);
 Route::post('ckeditor/upload', 'CKEditorController@upload')->name('ckeditor.image-upload');

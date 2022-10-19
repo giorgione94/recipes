@@ -9,20 +9,19 @@ use Illuminate\Support\Facades\Auth;
 
 class LikeController extends Controller
 {
-    public function store(Request $request)
+    public function toggle(Request $request)
     {
-        $user = Auth::user();
-        $recipe = Recipe::find($request->recipe_id);
-        $like = Like::where('user_id', $user->id)->where('recipe_id', $recipe->id);
+        $recipe = Recipe::find($request->recipeId);
+        $like = Like::where('user_id', $request->userId)->where('recipe_id', $recipe->id);
         if (count($like->get())) {
             $like->delete();
         }
         else {
             Like::create([
-                'user_id' => $user->id,
+                'user_id' => $request->userId,
                 'recipe_id' => $recipe->id
             ]);
         }
-        return redirect()->route('recipes.show', [$recipe]);
+        return ['alert' => 'Like created successfully'];
     }
 }

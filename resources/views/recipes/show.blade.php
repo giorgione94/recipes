@@ -18,13 +18,7 @@
                             {{ $recipe->publication_date }}
                         </small>
                     </p>
-                    <form action="{{ route('likes.store') }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="recipe_id" value="{{ $recipe->id }}">
-                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                        <button type="submit" class="btn btn-primary"><i class="bi bi-suit-heart"></i></button>
-                        <span>{{ count($recipe->likes) }}</span>
-                    </form>
+                    <like :recipe-id="{{ $recipe->id}}" :user-id="{{ Auth::User()->id }}"></like>
                 </div>
             </div>
         </div>
