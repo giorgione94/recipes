@@ -16,7 +16,7 @@
 
                         <h1 class="fw-bold">YOUR RECIPES</h1>
 
-                        <a href="{{ route('recipes.create') }}" class="btn btn-outline-dark mb-2">New Post</a>
+                        <a href="{{ route('recipes.create') }}" class="btn btn-outline-dark mb-2">New Recipe</a>
 
                         <table class="table table-hover table-md text-monospace">
                             <thead>

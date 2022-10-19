@@ -22,7 +22,7 @@
                         @csrf
                         <input type="hidden" name="recipe_id" value="{{ $recipe->id }}">
                         <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                        <button type="submit">LIKE</button>
+                        <button type="submit" class="btn btn-primary"><i class="bi bi-suit-heart"></i></button>
                         <span>{{ count($recipe->likes) }}</span>
                     </form>
                 </div>
