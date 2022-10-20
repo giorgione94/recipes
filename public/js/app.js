@@ -5323,18 +5323,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      recipeId: "",
-      userId: ""
+      recipeId: ""
     };
   },
-  props: ['recipeId', 'userId'],
+  props: ['recipeId'],
   methods: {
     toggle: function toggle() {
       var _this = this;
-      console.log(this.userId);
+      //const token = localStorage.getItem('XSRF-TOKEN');
+      var token = document.head.querySelector('meta[name="csrf-token"]');
+      //axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+      console.log(token.content);
+      var headers = {
+        "XSRF-TOKEN": token.content
+      };
       axios.post('/api/like', {
-        recipeId: this.recipeId,
-        userId: this.userId
+        recipeId: this.recipeId
+      }, {
+        headers: headers
       }).then(function (response) {
         _this.$emit('create-post', true);
       });

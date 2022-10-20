@@ -18,7 +18,7 @@
                             {{ $recipe->publication_date }}
                         </small>
                     </p>
-                    <like :recipe-id="{{ $recipe->id}}" :user-id="{{ Auth::User()->id }}"></like>
+                    <like :recipe-id="{{ $recipe->id}}"></like>
                 </div>
             </div>
         </div>
