@@ -1,29 +1,30 @@
 <template>
     <div>
-        <i @click="toggle" class="bi bi-suit-heart"></i>
+        <i @click="toggle"  class="bi" :class="[isActive ? 'bi-suit-heart-fill': 'bi-suit-heart']"></i>
     </div>
 </template>
 
 <script>
 
 export default {
-    data() { return { recipeId: "" } },
-    props: ['recipeId'],
+    data() { return { recipeId: "", userId: "" } },
+    props: ['recipeId', 'userId'],
     methods: {
         toggle() {
-            //const token = localStorage.getItem('XSRF-TOKEN');
-            let token = document.head.querySelector('meta[name="csrf-token"]');
-            //axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-            console.log(token.content);
-            const headers = {
-                "XSRF-TOKEN": token.content
-            };
+
             axios.post(
-                '/api/like', { recipeId: this.recipeId }, {headers: headers}
+                '/api/recipe/' + this.recipeId + '/like/' + this.userId
             ).then((response) => {
-                this.$emit('create-post', true)
+                console.log(response)
             })
         }
+    },
+    created() {
+        axios.get(
+            '/api/recipe/' + this.recipeId + '/like/' + this.userId
+        ).then((response) => {
+            console.log(response)
+        })
     }
 }
 </script>

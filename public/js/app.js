@@ -5323,28 +5323,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      recipeId: ""
+      recipeId: "",
+      userId: ""
     };
   },
-  props: ['recipeId'],
+  props: ['recipeId', 'userId'],
   methods: {
     toggle: function toggle() {
-      var _this = this;
-      //const token = localStorage.getItem('XSRF-TOKEN');
-      var token = document.head.querySelector('meta[name="csrf-token"]');
-      //axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-      console.log(token.content);
-      var headers = {
-        "XSRF-TOKEN": token.content
-      };
-      axios.post('/api/like', {
-        recipeId: this.recipeId
-      }, {
-        headers: headers
-      }).then(function (response) {
-        _this.$emit('create-post', true);
+      axios.post('/api/recipe/' + this.recipeId + '/like/' + this.userId).then(function (response) {
+        console.log(response);
       });
     }
+  },
+  created: function created() {
+    axios.get('/api/recipe/' + this.recipeId + '/like/' + this.userId).then(function (response) {
+      console.log(response);
+    });
   }
 });
 
@@ -28176,7 +28170,11 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("i", { staticClass: "bi bi-suit-heart", on: { click: _vm.toggle } }),
+    _c("i", {
+      staticClass: "bi",
+      class: [_vm.isActive ? "bi-suit-heart-fill" : "bi-suit-heart"],
+      on: { click: _vm.toggle },
+    }),
   ])
 }
 var staticRenderFns = []

@@ -20,5 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Auth::routes();
 
-Route::post('/like', [App\Http\Controllers\LikeController::class , 'toggle'])->name('like');
+Route::get('/recipe/{recipe_id}/like/{user_id}', [App\Http\Controllers\LikeController::class , 'liked'])->name('liked');
+
+Route::post('/recipe/{recipe_id}/like/{user_id}', [App\Http\Controllers\LikeController::class , 'toggle'])->name('like');
 
