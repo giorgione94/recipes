@@ -5319,26 +5319,49 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      recipeId: "",
-      userId: ""
+      isActive: null,
+      updatedLikes: 0
     };
   },
-  props: ['recipeId', 'userId'],
+  props: ['recipeId', 'userId', 'likes'],
   methods: {
+    liked: function liked() {
+      var _this = this;
+      if (this.userId) {
+        axios.get('/api/recipe/' + this.recipeId + '/like/' + this.userId).then(function (response) {
+          _this.isActive = response.data;
+        });
+      }
+      this.updatedLikes = this.likes;
+      console.log('ho fatto liked');
+    },
     toggle: function toggle() {
+      var _this2 = this;
       axios.post('/api/recipe/' + this.recipeId + '/like/' + this.userId).then(function (response) {
-        console.log(response);
+        _this2.isActive = !_this2.isActive;
+        _this2.updatedLikes = _this2.isActive ? _this2.updatedLikes + 1 : _this2.updatedLikes - 1;
       });
+      console.log('ho fatto toggle');
     }
   },
-  created: function created() {
-    axios.get('/api/recipe/' + this.recipeId + '/like/' + this.userId).then(function (response) {
-      console.log(response);
-    });
+  beforeMount: function beforeMount() {
+    console.log('qui non sono ancora mounted');
+  },
+  mounted: function mounted() {
+    console.log('qui sono mounted');
+    this.liked();
   }
 });
 
@@ -28170,11 +28193,46 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("i", {
-      staticClass: "bi",
-      class: [_vm.isActive ? "bi-suit-heart-fill" : "bi-suit-heart"],
-      on: { click: _vm.toggle },
-    }),
+    _vm.userId
+      ? _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            attrs: { type: "button" },
+            on: { click: _vm.toggle },
+          },
+          [
+            _vm.isActive
+              ? _c("i", { staticClass: "bi bi-suit-heart-fill" })
+              : _vm._e(),
+            _vm._v(" "),
+            !_vm.isActive
+              ? _c("i", { staticClass: "bi bi-suit-heart" })
+              : _vm._e(),
+            _vm._v(" "),
+            _c("span", { staticClass: "badge badge-secondary" }, [
+              _vm._v(_vm._s(_vm.updatedLikes)),
+            ]),
+          ]
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    !_vm.userId
+      ? _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            attrs: { type: "button", disabled: "" },
+          },
+          [
+            _c("i", { staticClass: "bi bi-suit-heart-fill" }),
+            _vm._v(" "),
+            _c("span", { staticClass: "badge badge-secondary" }, [
+              _vm._v(_vm._s(_vm.updatedLikes)),
+            ]),
+          ]
+        )
+      : _vm._e(),
   ])
 }
 var staticRenderFns = []

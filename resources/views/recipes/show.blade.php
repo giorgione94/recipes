@@ -18,7 +18,9 @@
                             {{ $recipe->publication_date }}
                         </small>
                     </p>
-                    <like :recipe-id="{{ $recipe->id}}" @if(Auth::check()) :user-id="{{ Auth::id() }}" @endif></like>
+                    <like :recipe-id="{{ $recipe->id}}" :likes="{{ count($recipe->likes) }}" 
+                        @if(Auth::check()) :user-id="{{ Auth::id() }}" @else :user-id="0" @endif>
+                    </like>
                 </div>
             </div>
         </div>

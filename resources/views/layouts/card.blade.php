@@ -18,7 +18,11 @@
             <a href="{{ route('recipes.show', $recipe) }}" class="btn btn-secondary bg-gradient">
                 Read More
             </a>
-            <span>{{ count($recipe->likes) }}</span>
+        </div>
+        <div>
+            <like :recipe-id="{{ $recipe->id }}" :likes="{{ count($recipe->likes) }}"
+                @if (Auth::check()) :user-id="{{ Auth::id() }}" @else :user-id="0" @endif>
+            </like>
         </div>
     </div>
 </div>
