@@ -51,7 +51,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        $recipes = $category->recipes()->paginate(4);
+        $recipes = $category->recipes()->paginate(8);
         return view('categories.show')->with('category', $category)->with('recipes', $recipes);
     }
 

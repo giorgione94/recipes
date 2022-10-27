@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="m-3">
-                                        <img src="{{ asset('images/chefs/' . $chef->profile_image) }}" class="card-img-top img-thumbnail w-25" alt="...">
+                                        <img src="{{ asset('images/chefs/' . $chef->profile_image) }}" class="card-img-top img-thumbnail w-25 profileImg" alt="...">
 
                                         <input type="file" name="profile_image" value="{{ $chef->profile_image }}" class="form-control mt-3">
                                     </div>

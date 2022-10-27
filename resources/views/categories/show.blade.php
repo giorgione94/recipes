@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="m-3">
                     <img src="{{ asset('images/categories/' . $category->cover_image) }}"
-                        class="card-img-top img-thumbnail img" alt="...">
+                        class="card-img-top img-thumbnail img categoryImg" alt="...">
 
                     <h1 class="text-light">{{ $category->title }}</h1>
                     <h2>{{ $category->subtitle }}</h2>

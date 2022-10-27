@@ -18,7 +18,7 @@ class AdminController extends Controller
     public function index()
     {
         $user_id = Auth::user()->id;
-        $recipes = Recipe::where('user_id', $user_id)->with('category')->paginate(6);
+        $recipes = Recipe::where('user_id', $user_id)->with('category')->paginate(8);
         return view('admin.dashboard')->with('recipes', $recipes);
     }
 
