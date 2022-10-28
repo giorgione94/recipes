@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Auth;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
 Auth::routes();
 
 Route::get('/recipe/{recipe_id}/like/{user_id}', [App\Http\Controllers\LikeController::class , 'liked'])->name('liked');
