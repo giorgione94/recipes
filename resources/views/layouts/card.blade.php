@@ -1,5 +1,5 @@
 <div class="col">
-    <div class="card m-3">
+    <div class="card m-3 card-food">
         <img src="{{ asset('images/recipes/' . $recipe->cover_image) }}" class="cover imgBox" alt="...">
         <div class="card-body">
             <h5 class="card-title">{{ $recipe->title }}</h5>

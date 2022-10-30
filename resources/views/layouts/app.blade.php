@@ -22,7 +22,7 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 
-<body class="bg-gradient">
+<body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-dark bg-gradient shadow-sm">
             <div class="container">
@@ -99,7 +99,7 @@
             @yield('content')
         </main>
 
-        <footer class="py-4">
+        <footer>
             @include('footer')
         </footer>
     </div>
