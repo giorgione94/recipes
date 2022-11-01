@@ -1,23 +1,60 @@
-<div class="bg-dark bg-dark-gradient">
-    <div class="row">
-
-        <div class="col-6 text">
-            &nbsp;&nbsp;<i class="bi bi-geo-alt-fill text-monospace text-light">&nbsp;Location</i>
-            <br>
-            &nbsp;&nbsp;<i class="bi bi-phone-fill text-monospace text-light">&nbsp;+123 123 456 7890</i>
-            <br>
-            &nbsp;&nbsp;<i class="bi bi-envelope text-monospace text-light">&nbsp;email@email.com</i>
+<div class="container">
+    <div class="bg-dark bg-dark-gradient">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-4 g-4">
+            <div class="col mb-2">
+                <h4 class="text-light font-monospace"> &nbsp;Follow Us</h4>
+                <div class="mb-1">
+                    &nbsp; &nbsp;<i class="bi bi-facebook text-light font-monospace">&nbsp;Facebook</i>
+                </div>
+                <div class="mb-1">
+                    &nbsp; &nbsp;<i class="bi bi-instagram text-light font-monospace">&nbsp;Instagram</i>
+                </div>
+                <div class="mb-1">
+                    &nbsp; &nbsp;<i class="bi bi-tiktok text-light font-monospace">&nbsp;TikTok</i>
+                </div>
+                <div class="mb-1">
+                    &nbsp; &nbsp;<i class="bi bi-youtube text-light font-monospace">&nbsp;Youtube</i>
+                </div>
+            </div>
+            <div class="col mb-2">
+                <h4 class="text-light font-monospace">Info</h4>
+                <div class="mb-1">
+                    <p class="text-light font-monospace">Chi siamo</p>
+                </div>
+                <div class="mb-1">
+                    <p class="text-light font-monospace">Accedi</p>
+                </div>
+                <div class="mb-1">
+                    <p class="text-light font-monospace">Abbonati</p>
+                </div>
+                <div class="mb-1">
+                    <p class="text-light font-monospace">Gruppo Mondadori</p>
+                </div>
+            </div>
+            <div class="col mb-2">
+                <h4 class="text-light font-monospace">Discover</h4>
+                <div class="mb-1">
+                    <p class="text-light font-monospace">Crea un blog</p>
+                </div>
+                <div class="mb-1">
+                    <p class="text-light font-monospace">In edicola</p>
+                </div>
+                <div class="mb-1">
+                    <p class="text-light font-monospace">Shopping</p>
+                </div>
+                <div class="mb-1">
+                    <p class="text-light font-monospace">Ultime ricette</p>
+                </div>
+            </div>
+            <div class="col mb-2">
+                <h4 class="text-light font-monospace">Download App</h4>
+                <div class="col">
+                    <i class="bi bi-apple btn btn-dark text-light font-monospace">&nbsp;App Store</i>
+                    <br>
+                    <i class="bi bi-google-play btn btn-dark text-light font-monospace">&nbsp;Google Play</i>
+                </div>
+            </div>
         </div>
 
-        <div class="col-6 text">
-            <h4 class="text-light">About</h4>
-
-            <p class="text-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos iste repellat dolores temporibus cupiditate odio similique distinctio ea exercitationem vitae doloribus totam commodi, libero illo nam voluptatum minima. Earum, porro?</p>
-
-            <i class="bi bi-facebook text-monospace text-light">&nbsp;Facebook</i>
-            &nbsp;<i class="bi bi-instagram text-monospace text-light">&nbsp;Instagram</i>
-            &nbsp;<i class="bi bi-twitter text-monospace text-light">&nbsp;Twitter</i>
-
-        </div>
     </div>
 </div>
