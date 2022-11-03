@@ -14,8 +14,7 @@
                     <p class="card-text">
                         <small class="text">
                             {{ $recipe->user->name }} |
-                            {{ $recipe->category->title }} |
-                            {{ $recipe->publication_date }}
+                            {{ $recipe->category->title }}
                         </small>
                     </p>
                     <like :recipe-id="{{ $recipe->id}}" :likes="{{ count($recipe->likes) }}" 

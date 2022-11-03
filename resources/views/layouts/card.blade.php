@@ -11,8 +11,7 @@
                     </a>
                     |
                     <a href="{{ route('categories.show', $recipe->category) }}">
-                        {{ $recipe->category->title }}</a> |
-                    {{ $recipe->publication_date }}
+                        {{ $recipe->category->title }}</a>
                 </small>
             </p>
             <a href="{{ route('recipes.show', $recipe) }}" class="btn btn-secondary bg-gradient">
