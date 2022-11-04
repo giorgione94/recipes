@@ -45,7 +45,7 @@ class AdminController extends Controller
         $request->validate([
             'name' => 'required',
             'bio' => 'required',
-            'profile_image' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'profile_image' => 'image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
 
         $user_id = Auth::user()->id;
