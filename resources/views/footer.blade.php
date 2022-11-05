@@ -4,16 +4,28 @@
             <div class="col text-center">
                 <h4 class="text-light font-monospace">Follow Us</h4>
                 <div>
-                    <a href="https://www.facebook.com"><i class="bi bi-facebook btn btn-dark text-light font-monospace">&nbsp;Facebook</i></a>
+                    @if (env('FACEBOOK_URL'))
+                        <a href="{{ env('FACEBOOK_URL') }}" target="blank"><i
+                                class="bi bi-facebook btn btn-dark text-light font-monospace">&nbsp;Facebook</i></a>
+                    @endif
                 </div>
                 <div>
-                    <a href="https://www.instagram.com/"><i class="bi bi-instagram btn btn-dark text-light font-monospace">&nbsp;Instagram</i></a>
+                    @if (env('INSTAGRAM_URL'))
+                        <a href="{{ env('INSTAGRAM_URL') }}" target="blank"><i
+                                class="bi bi-instagram btn btn-dark text-light font-monospace">&nbsp;Instagram</i></a>
+                    @endif
                 </div>
                 <div>
-                    <a href="https://www.tiktok.com/"><i class="bi bi-tiktok btn btn-dark text-light font-monospace">&nbsp;TikTok</i></a>
+                    @if (env('TIKTOK_URL'))
+                        <a href="{{ env('TIKTOK_URL') }}" target="blank"><i
+                                class="bi bi-tiktok btn btn-dark text-light font-monospace">&nbsp;TikTok</i></a>
+                    @endif
                 </div>
                 <div>
-                    <a href="https://www.youtube.com/"><i class="bi bi-youtube btn btn-dark text-light font-monospace">&nbsp;Youtube</i></a>
+                    @if (env('YOUTUBE_URL'))
+                        <a href="{{ env('YOUTUBE_URL') }}" target="blank"><i
+                                class="bi bi-youtube btn btn-dark text-light font-monospace">&nbsp;Youtube</i></a>
+                    @endif
                 </div>
             </div>
             <div class="col text-center">
@@ -23,18 +35,22 @@
                         href="{{ route('login') }}">{{ __('Accedi') }}</a>
                 </div>
             </div>
-            
+
             <div class="col text-center">
                 <h4 class="text-light font-monospace ">Download App</h4>
                 <div class="col">
-                    <a href="https://www.apple.com/it/app-store/">
-                        <i class="bi bi-apple btn btn-dark text-light font-monospace">&nbsp;App Store
-                        </i>
-                    </a>
+                    @if (env('APP_STORE_URL'))
+                        <a href="{{ env('APP_STORE_URL') }}" target="blank">
+                            <i class="bi bi-apple btn btn-dark text-light font-monospace">&nbsp;App Store
+                            </i>
+                        </a>
+                    @endif
                     <br>
-                    <a href="https://play.google.com"><i
-                            class="bi bi-google-play btn btn-dark text-light font-monospace">&nbsp;Google Play</i>
-                    </a>
+                    @if (env('GOOGLE_PLAY_URL'))
+                        <a href="{{ env('GOOGLE_PLAY_URL') }}" target="blank"><i
+                                class="bi bi-google-play btn btn-dark text-light font-monospace">&nbsp;Google Play</i>
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>

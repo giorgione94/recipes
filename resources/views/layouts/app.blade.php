@@ -24,9 +24,9 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-dark bg-gradient shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark bg-gradient shadow-sm">
             <div class="container">
-                <a class="navbar-brand text-light" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -40,7 +40,7 @@
                     <ul class="navbar-nav me-auto">
                         @foreach ($categories as $category)
                             <li class="nav-item">
-                                <a href="{{ route('categories.show', $category) }}" class="nav-link text-light">
+                                <a href="{{ route('categories.show', $category) }}" class="nav-link ">
                                     {{ $category->title }}
                                 </a>
                             </li>
@@ -53,18 +53,18 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link " href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link " href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button"
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle " href="#" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
