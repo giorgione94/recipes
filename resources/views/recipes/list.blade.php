@@ -7,9 +7,8 @@
                 @include('layouts.card')
             @endforeach
         </div>
-        <div class="pagination justify-content-center">
-            {{$recipes->links()}}
+        <div class="pagination justify-content-center mt-4">
+            {{ $recipes->links() }}
         </div>
-        
     </div>
 @endsection
