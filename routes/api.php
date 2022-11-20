@@ -24,4 +24,5 @@ Auth::routes();
 Route::get('/recipe/{recipe_id}/like/{user_id}', [App\Http\Controllers\LikeController::class , 'liked'])->name('liked');
 
 Route::post('/recipe/{recipe_id}/like/{user_id}', [App\Http\Controllers\LikeController::class , 'toggle'])->name('like');
-
+Route::post('/recipe/{recipe_id}/comment/{user_id}', [App\Http\Controllers\CommentController::class , 'store'])->name('comment');
+Route::delete('/recipe/{recipe_id}/comment/{user_id}', [App\Http\Controllers\CommentController::class , 'destroy'])->name('comment');

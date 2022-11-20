@@ -20,6 +20,10 @@ window.Vue = require('vue').default;
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('like', require('./components/Like.vue').default);
+Vue.component('add-comment-form', require('./components/AddCommentForm.vue').default);
+Vue.component('list-comment', require('./components/ListComment.vue').default);
+Vue.component('list-view', require('./components/ListView.vue').default);
+Vue.component('app', require('./components/App.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

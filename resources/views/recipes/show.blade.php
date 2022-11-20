@@ -24,6 +24,9 @@
                     <like :recipe-id="{{ $recipe->id }}" :likes="{{ count($recipe->likes) }}"
                         @if (Auth::check()) :user-id="{{ Auth::id() }}" @else :user-id="0" @endif>
                     </like>
+                    <app></app>
+                    
+                    
                 </div>
             </div>
         </div>
