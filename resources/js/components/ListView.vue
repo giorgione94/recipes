@@ -1,21 +1,40 @@
 <template>
     <div>
         <div v-for="(comment, index) in comments" :key="index">
-            <list-view-vue 
+            <list-comment 
             :comment="comment" 
             class="comment" 
-            v-on:itemchanged="$emit('reloadlist')"
             />
         </div>
     </div>
 </template>
 
 <script>
-import ListCommentVue from './ListComment.vue'
+import ListComment from './ListComment.vue'
 export default {
-    props: ['comments'],
     components: {
-        ListCommentVue
+        ListComment
+    },
+    data: function () {
+        return {
+            comments: []
+        }
+    },
+    props: ['recipeId'],
+    methods: {
+        getList() {
+            console.log(this.recipeId)
+            axios.get('/api/recipe/' + this.recipeId + '/comment/')
+                .then(response => {
+                    this.comments = response.data
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+        }
+    },
+    created() {
+        this.getList();
     }
 }
 </script>

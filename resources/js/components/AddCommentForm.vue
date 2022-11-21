@@ -30,6 +30,7 @@ export default {
                     if (response.status == 201) {
                         this.$emit('reloadlist');
                         this.comment.body == '';
+
                     }
                 })
                 .catch(error => {

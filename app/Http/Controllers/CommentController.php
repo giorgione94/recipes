@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
+    public function index(Request $request)
+    {
+        return Comment::where('recipe_id', $request->recipe_id)->orderby('created_at', 'DESC')->get();
+    }
     public function store(Request $request)
     {
         $newComment = new Comment;

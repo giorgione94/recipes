@@ -24,9 +24,17 @@
                     <like :recipe-id="{{ $recipe->id }}" :likes="{{ count($recipe->likes) }}"
                         @if (Auth::check()) :user-id="{{ Auth::id() }}" @else :user-id="0" @endif>
                     </like>
-                    <app></app>
-                    
-                    
+                    <br>
+                    <add-comment-form :recipe-id="{{ $recipe->id }}"
+                        @if (Auth::check()) :user-id="{{ Auth::id() }}" @else :user-id="0" @endif >
+                    </add-comment-form>
+                    <br>
+                    <div>
+                        <list-view :comments="comments" :recipe-id="{{ $recipe->id }}" />
+                    </div>
+
+
+
                 </div>
             </div>
         </div>
