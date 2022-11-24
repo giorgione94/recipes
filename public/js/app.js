@@ -5396,7 +5396,6 @@ __webpack_require__.r(__webpack_exports__);
         });
       }
       this.updatedLikes = this.likes;
-      console.log('ho fatto liked');
     },
     toggle: function toggle() {
       var _this2 = this;
@@ -5404,14 +5403,10 @@ __webpack_require__.r(__webpack_exports__);
         _this2.isActive = !_this2.isActive;
         _this2.updatedLikes = _this2.isActive ? _this2.updatedLikes + 1 : _this2.updatedLikes - 1;
       });
-      console.log('ho fatto toggle');
     }
   },
-  beforeMount: function beforeMount() {
-    console.log('qui non sono ancora mounted');
-  },
+  beforeMount: function beforeMount() {},
   mounted: function mounted() {
-    console.log('qui sono mounted');
     this.liked();
   }
 });
@@ -5481,7 +5476,6 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     getList: function getList() {
       var _this = this;
-      console.log(this.recipeId);
       axios.get('/api/recipe/' + this.recipeId + '/comment/').then(function (response) {
         _this.comments = response.data;
       })["catch"](function (error) {
@@ -28550,7 +28544,7 @@ var render = function () {
           expression: "comment.body",
         },
       ],
-      attrs: { name: "", id: "", cols: "30", rows: "10" },
+      attrs: { placeholder: "Add Comment..." },
       domProps: { value: _vm.comment.body },
       on: {
         input: function ($event) {

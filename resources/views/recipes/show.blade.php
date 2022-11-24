@@ -21,17 +21,20 @@
                             </a>
                         </small>
                     </p>
+
                     <like :recipe-id="{{ $recipe->id }}" :likes="{{ count($recipe->likes) }}"
                         @if (Auth::check()) :user-id="{{ Auth::id() }}" @else :user-id="0" @endif>
                     </like>
                     <br>
-                    <add-comment-form :recipe-id="{{ $recipe->id }}"
+                    <div class="form-control">
+                        <list-view :recipe-id="{{ $recipe->id }}" :comments="{{ $recipe->comments }}" />
+                    </div>
+                    <br>
+                    <add-comment-form :recipe-id="{{ $recipe->id }}" class="form-control"
                         @if (Auth::check()) :user-id="{{ Auth::id() }}" @else :user-id="0" @endif >
                     </add-comment-form>
-                    <br>
-                    <div>
-                        <list-view :comments="comments" :recipe-id="{{ $recipe->id }}" />
-                    </div>
+                    
+                   
 
 
 

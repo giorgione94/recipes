@@ -23,7 +23,6 @@ export default {
     props: ['recipeId'],
     methods: {
         getList() {
-            console.log(this.recipeId)
             axios.get('/api/recipe/' + this.recipeId + '/comment/')
                 .then(response => {
                     this.comments = response.data

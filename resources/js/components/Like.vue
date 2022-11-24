@@ -29,8 +29,6 @@ export default {
                 })
             }
             this.updatedLikes = this.likes;
-            console.log('ho fatto liked');
-
         },
         toggle() {
 
@@ -40,14 +38,11 @@ export default {
                 this.isActive = !this.isActive;
                 this.updatedLikes = this.isActive ? this.updatedLikes + 1 : this.updatedLikes - 1;
             })
-            console.log('ho fatto toggle');
         }
     },
     beforeMount: function () {
-        console.log('qui non sono ancora mounted');
     },
     mounted: function () {
-        console.log('qui sono mounted');
         this.liked();
     }
 }

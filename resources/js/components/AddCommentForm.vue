@@ -1,6 +1,6 @@
 <template>
     <div class="addComment">
-        <textarea name="" id="" cols="30" rows="10" v-model="comment.body"></textarea>
+        <textarea v-model="comment.body" placeholder="Add Comment..." ></textarea>
         <br>
         <button type="submit" class="btn btn-primary" @click="addComment()">Add Comment</button>
     </div>
